@@ -111,7 +111,7 @@ const demoProjects: Project[] = [
     image: null,
     category: 'web',
     technologies: ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Zustand', 'AI/LLM'],
-    liveUrl: 'https://testai-platform.netlify.app',
+    liveUrl: 'https://aitestlar.netlify.app',
     githubUrl: 'https://github.com/xasanovtohirjon789-gif/testai-platform',
     featured: true,
     createdAt: '2025-03-15',
