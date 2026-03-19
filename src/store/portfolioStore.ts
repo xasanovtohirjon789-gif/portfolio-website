@@ -87,18 +87,18 @@ interface PortfolioState {
 // Profile - o'z ma'lumotlaringizni kiriting
 const demoProfile: Profile = {
   id: '1',
-  name: 'Ismingiz',
-  title: 'Kasbingiz',
-  bio: 'O\'zingiz haqingizda qisqacha ma\'lumot kiriting.',
+  name: 'Tohirjon Xasanov',
+  title: 'Full Stack Developer',
+  bio: 'Zamonaviy veb ilovalar yaratishga qiziqaman. React, Next.js, Node.js va boshqa texnologiyalarda tajribam bor.',
   avatar: null,
-  email: 'email@example.com',
-  phone: '+998 XX XXX XX XX',
-  location: 'Shahar, O\'zbekiston',
+  email: 'xasanovtohirjon89@gmail.com',
+  phone: '+998333234535',
+  location: 'Toshkent, O\'zbekiston',
   website: null,
-  github: 'https://github.com/username',
+  github: 'https://github.com/xasanovtohirjon789-gif',
   linkedin: null,
   twitter: null,
-  telegram: '@username',
+  telegram: '@khasanov_326',
   resumeUrl: null,
 }
 
