@@ -80,137 +80,54 @@ interface PortfolioState {
   filterAndSortProjects: () => void
   
   setIsAdmin: (isAdmin: boolean) => void
-  setActiveSection: (section: string) => void
-  setIsLoading: (isLoading: boolean) => void
+  setActiveSection: (section: string) => set({ activeSection: section })
+  setIsLoading: (isLoading: boolean) => set({ isLoading })
 }
 
-// Demo data
+// Profile - o'z ma'lumotlaringizni kiriting
 const demoProfile: Profile = {
   id: '1',
-  name: 'Tohirjon Xasanov',
-  title: 'Full Stack Developer',
-  bio: 'Zamonaviy veb ilovalar yaratishga qiziqaman. React, Next.js, Node.js va boshqa texnologiyalarda tajribam bor. O\'zbekistonda yashayman va doim yangi narsalarni o\'rganishga harakat qilaman.',
+  name: 'Ismingiz',
+  title: 'Kasbingiz',
+  bio: 'O\'zingiz haqingizda qisqacha ma\'lumot kiriting.',
   avatar: null,
-  email: 'example@email.com',
-  phone: '+998 90 123 45 67',
-  location: 'Toshkent, O\'zbekiston',
+  email: 'email@example.com',
+  phone: '+998 XX XXX XX XX',
+  location: 'Shahar, O\'zbekiston',
   website: null,
-  github: 'https://github.com/xasanovtohirjon789-gif',
+  github: 'https://github.com/username',
   linkedin: null,
   twitter: null,
   telegram: '@username',
   resumeUrl: null,
 }
 
-const demoProjects: Project[] = [
-  {
-    id: '1',
-    title: 'TestAI Platform',
-    description: 'AI yordamida test savollari yaratuvchi zamonaviy ta\'lim platformasi. Sun\'iy intellekt yordamida har qanday mavzu bo\'yicha test savollari yaratish imkoniyati.',
-    image: null,
-    category: 'Web App',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Zustand', 'AI API'],
-    liveUrl: 'https://testai-platform.netlify.app',
-    githubUrl: 'https://github.com/xasanovtohirjon789-gif/testai-platform',
-    featured: true,
-    createdAt: '2024-01-15',
-    updatedAt: '2024-01-15',
-  },
-  {
-    id: '2',
-    title: 'E-Commerce Dashboard',
-    description: 'Online do\'konlar uchun boshqaruv paneli. Mahsulotlar, buyurtmalar va mijozlarni boshqarish imkoniyati.',
-    image: null,
-    category: 'Dashboard',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Chart.js'],
-    liveUrl: null,
-    githubUrl: 'https://github.com/xasanovtohirjon789-gif/ecommerce-dashboard',
-    featured: true,
-    createdAt: '2024-01-10',
-    updatedAt: '2024-01-10',
-  },
-  {
-    id: '3',
-    title: 'Task Manager App',
-    description: 'Kundalik vazifalarni boshqarish ilovasi. Vazifalarni qo\'shish, tahrirlash va kategoriyalarga ajratish.',
-    image: null,
-    category: 'Mobile App',
-    technologies: ['React Native', 'Firebase', 'TypeScript'],
-    liveUrl: null,
-    githubUrl: 'https://github.com/xasanovtohirjon789-gif/task-manager',
-    featured: false,
-    createdAt: '2024-01-05',
-    updatedAt: '2024-01-05',
-  },
-  {
-    id: '4',
-    title: 'Weather Application',
-    description: 'Ob-havo ma\'lumotlarini ko\'rsatuvchi veb ilova. Joylashuv bo\'yicha ob-havo ma\'lumotlarini olish.',
-    image: null,
-    category: 'Web App',
-    technologies: ['Vue.js', 'OpenWeather API', 'Tailwind CSS'],
-    liveUrl: null,
-    githubUrl: 'https://github.com/xasanovtohirjon789-gif/weather-app',
-    featured: false,
-    createdAt: '2023-12-20',
-    updatedAt: '2023-12-20',
-  },
-  {
-    id: '5',
-    title: 'Blog Platform',
-    description: 'Foydalanuvchilar o\'z maqolalarini yozib, boshqalar bilan ulashishi mumkin bo\'lgan blog platformasi.',
-    image: null,
-    category: 'Web App',
-    technologies: ['Next.js', 'Prisma', 'PostgreSQL', 'MDX'],
-    liveUrl: null,
-    githubUrl: 'https://github.com/xasanovtohirjon789-gif/blog-platform',
-    featured: false,
-    createdAt: '2023-12-15',
-    updatedAt: '2023-12-15',
-  },
-  {
-    id: '6',
-    title: 'Chat Application',
-    description: 'Real-time chat ilovasi. WebSocket yordamida xabar almashinuvchi veb ilova.',
-    image: null,
-    category: 'Web App',
-    technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-    liveUrl: null,
-    githubUrl: 'https://github.com/xasanovtohirjon789-gif/chat-app',
-    featured: false,
-    createdAt: '2023-12-10',
-    updatedAt: '2023-12-10',
-  },
-]
+// Bo'sh loyihalar ro'yxati - o'zingiznikini qo'shing
+const demoProjects: Project[] = []
 
+// Ko'nikmalar - o'z ko'nikmalaringizni kiriting
 const demoSkills: Skill[] = [
   // Frontend
-  { id: '1', name: 'React', level: 90, category: 'frontend', icon: null, order: 1 },
-  { id: '2', name: 'Next.js', level: 85, category: 'frontend', icon: null, order: 2 },
-  { id: '3', name: 'TypeScript', level: 85, category: 'frontend', icon: null, order: 3 },
-  { id: '4', name: 'Tailwind CSS', level: 90, category: 'frontend', icon: null, order: 4 },
-  { id: '5', name: 'Vue.js', level: 70, category: 'frontend', icon: null, order: 5 },
+  { id: '1', name: 'React', level: 80, category: 'frontend', icon: null, order: 1 },
+  { id: '2', name: 'Next.js', level: 75, category: 'frontend', icon: null, order: 2 },
+  { id: '3', name: 'TypeScript', level: 70, category: 'frontend', icon: null, order: 3 },
+  { id: '4', name: 'Tailwind CSS', level: 85, category: 'frontend', icon: null, order: 4 },
   
   // Backend
-  { id: '6', name: 'Node.js', level: 80, category: 'backend', icon: null, order: 1 },
-  { id: '7', name: 'Express', level: 80, category: 'backend', icon: null, order: 2 },
-  { id: '8', name: 'Python', level: 60, category: 'backend', icon: null, order: 3 },
-  { id: '9', name: 'REST API', level: 85, category: 'backend', icon: null, order: 4 },
+  { id: '5', name: 'Node.js', level: 70, category: 'backend', icon: null, order: 1 },
+  { id: '6', name: 'Python', level: 60, category: 'backend', icon: null, order: 2 },
   
   // Database
-  { id: '10', name: 'PostgreSQL', level: 75, category: 'database', icon: null, order: 1 },
-  { id: '11', name: 'MongoDB', level: 70, category: 'database', icon: null, order: 2 },
-  { id: '12', name: 'Prisma', level: 80, category: 'database', icon: null, order: 3 },
+  { id: '7', name: 'PostgreSQL', level: 65, category: 'database', icon: null, order: 1 },
+  { id: '8', name: 'MongoDB', level: 60, category: 'database', icon: null, order: 2 },
   
   // Tools
-  { id: '13', name: 'Git', level: 85, category: 'tools', icon: null, order: 1 },
-  { id: '14', name: 'Docker', level: 60, category: 'tools', icon: null, order: 2 },
-  { id: '15', name: 'Figma', level: 65, category: 'tools', icon: null, order: 3 },
-  { id: '16', name: 'Linux', level: 70, category: 'tools', icon: null, order: 4 },
+  { id: '9', name: 'Git', level: 80, category: 'tools', icon: null, order: 1 },
+  { id: '10', name: 'Figma', level: 60, category: 'tools', icon: null, order: 2 },
 ]
 
 export const usePortfolioStore = create<PortfolioState>((set, get) => ({
-  // Initial state with demo data
+  // Initial state
   projects: demoProjects,
   filteredProjects: demoProjects,
   selectedCategory: 'all',
