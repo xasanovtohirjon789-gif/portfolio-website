@@ -80,8 +80,8 @@ interface PortfolioState {
   filterAndSortProjects: () => void
   
   setIsAdmin: (isAdmin: boolean) => void
-  setActiveSection: (section: string) => set({ activeSection: section })
-  setIsLoading: (isLoading: boolean) => set({ isLoading })
+  setActiveSection: (section: string) => void
+  setIsLoading: (isLoading: boolean) => void
 }
 
 // Profile - o'z ma'lumotlaringizni kiriting
