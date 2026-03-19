@@ -102,8 +102,22 @@ const demoProfile: Profile = {
   resumeUrl: null,
 }
 
-// Bo'sh loyihalar ro'yxati - o'zingiznikini qo'shing
-const demoProjects: Project[] = []
+// Loyihalar ro'yxati
+const demoProjects: Project[] = [
+  {
+    id: '1',
+    title: 'TestAI - AI Test Generator',
+    description: 'Sun\'iy intellekt yordamida test savollari generatsiya qiluvchi zamonaviy veb ilova. Foydalanuvchilar fan tanlab, test turi va savollar sonini belgilab, AI orqali sifatli test savollarini yaratishi mumkin. Next.js 16, TypeScript va Tailwind CSS da yaratilgan.',
+    image: null,
+    category: 'web',
+    technologies: ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Zustand', 'AI/LLM'],
+    liveUrl: 'https://testai-platform.netlify.app',
+    githubUrl: 'https://github.com/xasanovtohirjon789-gif/testai-platform',
+    featured: true,
+    createdAt: '2025-03-15',
+    updatedAt: '2025-03-18',
+  },
+]
 
 // Ko'nikmalar - o'z ko'nikmalaringizni kiriting
 const demoSkills: Skill[] = [
