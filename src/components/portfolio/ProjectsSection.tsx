@@ -1,8 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Plus, FolderOpen } from 'lucide-react'
+import { Plus, FolderOpen, ExternalLink, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import { usePortfolioStore } from '@/store/portfolioStore'
 
 export function ProjectsSection() {
@@ -88,10 +89,64 @@ export function ProjectsSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                {/* Project card would go here */}
-                <div className="p-6 rounded-xl border bg-card">
+                {/* Project card */}
+                <div className="p-6 rounded-xl border bg-card hover:shadow-lg transition-shadow h-full flex flex-col">
+                  {/* Featured badge */}
+                  {project.featured && (
+                    <Badge className="w-fit mb-3 bg-gradient-to-r from-blue-500 to-purple-500">
+                      ⭐ Ajralgan
+                    </Badge>
+                  )}
+                  
+                  {/* Title */}
                   <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm">{project.description}</p>
+                  
+                  {/* Description */}
+                  <p className="text-muted-foreground text-sm mb-4 flex-grow">{project.description}</p>
+                  
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <Badge variant="outline" className="text-xs">
+                        +{project.technologies.length - 4}
+                      </Badge>
+                    )}
+                  </div>
+                  
+                  {/* Action buttons */}
+                  <div className="flex gap-2 mt-auto pt-2 border-t">
+                    {project.liveUrl && (
+                      <Button size="sm" asChild className="flex-1">
+                        <a 
+                          href={project.liveUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="gap-2"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          Ko'rish
+                        </a>
+                      </Button>
+                    )}
+                    {project.githubUrl && (
+                      <Button size="sm" variant="outline" asChild className="flex-1">
+                        <a 
+                          href={project.githubUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="gap-2"
+                        >
+                          <Github className="w-4 h-4" />
+                          Kod
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
